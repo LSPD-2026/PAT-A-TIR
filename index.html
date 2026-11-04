@@ -1,59 +1,34 @@
-<!-- Indique au navigateur que la page est écrite en HTML5 (version actuelle du HTML) -->
 <!DOCTYPE html>
-<!-- Début de la page ; lang="fr" précise que le contenu est en français -->
 <html lang="fr">
-<!-- Le <head> contient les informations sur la page (elles ne s'affichent pas dans la page) -->
 <head>
-    <!-- Encodage UTF-8 : permet d'afficher correctement les accents (é, è, à...) -->
     <meta charset="UTF-8">
-    <!-- Adapte l'affichage à la largeur de l'écran (utile sur téléphone) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Texte affiché dans l'onglet du navigateur -->
     <title>PATAT'A'TIR</title>
-    <!-- Relie la page à la feuille de style style.css, qui gère les couleurs et la mise en page -->
     <link rel="stylesheet" href="style.css">
-<!-- Fin des informations sur la page -->
 </head>
 
-<!-- Le <body> contient tout ce qui s'affiche à l'écran -->
 <body>
 
-    <!-- <br> = saut de ligne, pour laisser un peu d'espace -->
     <br>
-    <!-- <h1> = titre principal de la page, centré grâce à text-align: center -->
     <h1 style="text-align: center;">Bienvenue sur le site de la PATAT'A'TIR</h1><br>
 
-    <!-- <h2> = sous-titre, plus petit que le <h1> -->
     <h2 style="text-align: center;">Site officiel PATAT'A'TIR</h2>
 
-    <!-- Le slogan ; class="slogan" permet de lui donner un style particulier dans style.css -->
     <p class="slogan">Votre patate est précieuse pour la victoire !</p>
-    <!-- Deux sauts de ligne pour espacer le slogan des boutons -->
     <br><br>
 
-    <!-- <a href="..."> = lien : un clic emmène vers la page COMPETITION.html -->
     <a href="COMPETITION.html">
-    <!-- Le bouton affiché à l'intérieur du lien ; id="b1" sert à le styliser dans style.css -->
     <button type="button" id="b1">Notre compétition</button></a>
-    <!-- Espace entre les boutons -->
     <br><br>
 
-    <!-- Lien vers la page qui présente le sport et ses règles -->
     <a href="NOTRE_SPORT.html">
-        <!-- Bouton « Notre sport » ; id="b2" pour son style -->
         <button type="button" id="b2">Notre sport</button></a>
-    <!-- Espace entre les boutons -->
     <br><br>
 
-    <!-- Lien vers la page de contact -->
     <a href="CONTACT.html">
-        <!-- Bouton « Contact » ; id="b3" pour son style -->
         <button type="button" id="b3">Contact</button></a>
 
-    <!-- Affiche le logo ; src = nom du fichier image, alt = texte lu si l'image ne s'affiche pas, width = largeur en pixels -->
     <img src="pat_logo.png" alt="Logo de la PATAT'A'TIR" width="200">
 
-<!-- Fin du contenu affiché -->
 </body>
-<!-- Fin de la page -->
 </html>

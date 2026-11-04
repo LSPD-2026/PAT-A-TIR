@@ -1,86 +1,49 @@
-<!-- Indique au navigateur que la page est écrite en HTML5 -->
 <!DOCTYPE html>
-<!-- Début de la page, en français -->
 <html lang="fr">
-<!-- Informations sur la page (non affichées) -->
 <head>
-    <!-- Encodage UTF-8 pour les accents -->
     <meta charset="UTF-8">
-    <!-- Adapte l'affichage à la taille de l'écran -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Texte affiché dans l'onglet du navigateur -->
     <title>PATAT'A'TIR/NOTRE COMPÉTITION</title>
-    <!-- Relie la page à la feuille de style -->
     <link rel="stylesheet" href="style.css">
-<!-- Fin des informations -->
 </head>
 
-<!-- Contenu affiché à l'écran -->
 <body>
-    <!-- Lien + bouton pour revenir à l'accueil -->
     <a href="site.html"><button type="button">Retour</button></a>
 
-    <!-- Titre principal de la page -->
     <h1 style="text-align: center;">Notre compétition</h1>
 
-    <!-- Affiche de la compétition ; class="photo" = image en grand (voir style.css) -->
     <img src="comp_aff.png" alt="Affiche de la compétition de PATAT'A'TIR" class="photo">
 
-    <!-- Sous-titre de la partie vidéo -->
     <h2>Le sport expliqué en vidéo</h2>
-    <!-- <div> = boîte qui regroupe des éléments ; class="video" sert à la mettre en forme dans style.css -->
     <div class="video">
-        <!-- <iframe> = fenêtre qui affiche une autre page dans la nôtre : ici le lecteur YouTube -->
-        <!-- src = adresse de la vidéo au format "embed" (intégrable) ; allowfullscreen = autorise le plein écran -->
+        <!-- <iframe> = Lecteur YouTube -->
         <iframe src="https://www.youtube.com/embed/Aq5WXmQQooo" title="Explication de la PATAT'A'TIR" allowfullscreen></iframe>
-    <!-- Fin de la boîte vidéo -->
     </div>
-    <!-- Lien de secours si la vidéo ne s'affiche pas ; target="_blank" ouvre YouTube dans un nouvel onglet -->
     <p>La vidéo ne s'affiche pas ? <a href="https://www.youtube.com/watch?v=Aq5WXmQQooo" target="_blank">Regardez-la sur YouTube</a>.</p>
 
-    <!-- Sous-titre de la partie inscription -->
     <h2>Inscription</h2>
-    <!-- Paragraphe <p> contenant les conditions ; <br> passe à la ligne -->
-    <!-- « règles du sport » est un lien vers la page NOTRE_SPORT.html -->
     <p>- Avoir un sac homologué selon les <a href="NOTRE_SPORT.html">règles du sport</a>.<br>
-    <!-- Deuxième condition -->
     - À partir de 8 ans, si accompagné par ses parents.</p>
 
-    <!-- <form> = formulaire ; action = adresse où sont envoyées les données, method="post" = envoi discret (non visible dans l'adresse) -->
     <form action="/traitement" method="post">
-        <!-- <label> = texte devant le champ ; for="nom" le relie au champ dont l'id est "nom" -->
         <label for="nom">Nom :</label>
-        <!-- Champ de texte ; name = nom de la donnée envoyée ; required = champ obligatoire -->
         <input type="text" id="nom" name="user_nom" required><br><br>
 
-        <!-- Étiquette du champ Prénom -->
         <label for="prenom">Prénom :</label>
-        <!-- Champ de texte obligatoire pour le prénom -->
         <input type="text" id="prenom" name="user_prenom" required><br><br>
 
-        <!-- Étiquette du champ E-mail -->
         <label for="email">E-mail :</label>
-        <!-- type="email" : le navigateur vérifie qu'il y a bien un @ dans l'adresse -->
         <input type="email" id="email" name="user_email" required><br><br>
 
-        <!-- Étiquette du champ Téléphone -->
         <label for="telephone">Numéro de téléphone :</label>
-        <!-- type="tel" : champ téléphone (clavier numérique sur mobile) ; pattern = exige 10 chiffres ; placeholder = exemple affiché en gris -->
         <input type="tel" id="telephone" name="user_telephone" pattern="[0-9]{10}" placeholder="0612345678" required><br><br>
 
-        <!-- Étiquette de la zone Motivations -->
         <label for="motivations">Motivations :</label>
-        <!-- <textarea> = grande zone de texte sur plusieurs lignes ; rows="5" = hauteur de 5 lignes -->
         <textarea id="motivations" name="user_motivations" rows="5" required></textarea><br><br>
 
-        <!-- Bouton qui envoie le formulaire (type="submit") -->
         <button type="submit">Envoyer</button>
-    <!-- Fin du formulaire -->
     </form>
 
-    <!-- Logo de la fédération -->
     <img src="pat_logo.png" alt="Logo de la PATAT'A'TIR" width="200">
-<!-- Fin du contenu affiché -->
 </body>
-<!-- Fin de la page -->
 </html>
