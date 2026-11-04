@@ -1,0 +1,259 @@
+/* =====================================================
+   PATAT'A'TIR - Feuille de style (style.css)
+   Ce fichier décide de l'apparence de toutes les pages :
+   couleurs, tailles, espacements, boutons...
+   Une règle s'écrit : sélecteur { propriété: valeur; }
+   Le sélecteur dit QUOI modifier, les propriétés disent COMMENT.
+   ===================================================== */
+
+/* ----- Couleurs reprises du logo FFPAT ----- */
+/* :root = la page entière ; on y range des "variables" (des couleurs nommées) réutilisables partout avec var(--nom) */
+:root {
+    --bleu: #1d2f6f;          /* bleu marine du logo */
+    --bleu-clair: #2c4a9e;    /* bleu plus clair pour les sous-titres */
+    --rouge: #d71f26;         /* rouge du "T" de FFPAT */
+    --fond: #f4f6fb;          /* gris-bleu très clair pour le fond des pages */
+    --blanc: #ffffff;         /* blanc */
+    --texte: #222a3d;         /* couleur du texte courant (presque noir) */
+}
+
+/* ----- Base ----- */
+/* * = tous les éléments ; border-box : la largeur d'un élément inclut ses bordures et marges intérieures (plus simple à calculer) */
+* {
+    box-sizing: border-box;
+}
+
+/* body = tout le contenu visible de la page */
+body {
+    margin: 0 auto;                         /* "auto" centre la page horizontalement */
+    max-width: 900px;                       /* la page ne dépasse pas 900 pixels de large */
+    padding: 30px 20px;                     /* espace intérieur : 30px en haut/bas, 20px à gauche/droite */
+    font-family: "Segoe UI", Arial, sans-serif;  /* police utilisée (la suivante sert si la première manque) */
+    font-size: 16px;                        /* taille du texte */
+    line-height: 1.6;                       /* espace entre les lignes */
+    color: var(--texte);                    /* couleur du texte */
+    background-color: var(--fond);          /* couleur de fond */
+    border-top: 8px solid var(--bleu);      /* bande bleue en haut de la page */
+}
+
+/* ----- Titres ----- */
+/* h1 = titre principal */
+h1 {
+    color: var(--bleu);              /* titre en bleu */
+    font-size: 2.2em;                /* 2,2 fois la taille du texte normal */
+    text-transform: uppercase;       /* écrit tout en majuscules */
+    letter-spacing: 1px;             /* espace un peu les lettres */
+    margin: 10px 0;                  /* espace extérieur : 10px en haut et en bas */
+}
+
+/* h1::after = petit élément décoratif ajouté juste après le titre (le trait rouge) */
+h1::after {
+    content: "";                     /* pas de texte, juste une forme */
+    display: block;                  /* se place sur sa propre ligne */
+    width: 80px;                     /* largeur du trait */
+    height: 4px;                     /* épaisseur du trait */
+    margin: 12px auto 0;             /* 12px au-dessus, centré horizontalement */
+    background-color: var(--rouge);  /* trait rouge */
+    border-radius: 2px;              /* bouts arrondis */
+}
+
+/* h2 = sous-titres */
+h2 {
+    color: var(--bleu-clair);        /* bleu plus clair */
+    font-size: 1.4em;                /* 1,4 fois la taille normale */
+    font-weight: normal;             /* pas en gras */
+}
+
+/* ----- Slogan (page d'accueil) ----- */
+/* .slogan = l'élément qui a class="slogan" */
+.slogan {
+    text-align: center;              /* centré */
+    font-size: 1.3em;                /* un peu plus grand que le texte normal */
+    font-style: italic;              /* en italique */
+    font-weight: bold;               /* en gras */
+    color: var(--rouge);             /* en rouge pour attirer l'œil */
+}
+
+/* ----- Liens ----- */
+/* a = les liens */
+a {
+    color: var(--rouge);             /* liens en rouge */
+}
+
+/* a:hover = un lien quand la souris passe dessus */
+a:hover {
+    color: var(--bleu);              /* devient bleu au survol */
+}
+
+/* Les liens qui contiennent un bouton : on enlève le soulignement */
+a:has(> button) {
+    text-decoration: none;           /* pas de soulignement */
+}
+
+/* ----- Boutons ----- */
+/* button = tous les boutons du site */
+button {
+    display: inline-block;           /* se place dans la ligne mais accepte une taille */
+    padding: 12px 28px;              /* espace intérieur autour du texte */
+    font-family: inherit;            /* même police que le reste de la page */
+    font-size: 1em;                  /* taille du texte normale */
+    font-weight: bold;               /* texte en gras */
+    color: var(--blanc);             /* texte blanc */
+    background-color: var(--bleu);   /* fond bleu */
+    border: none;                    /* pas de bordure */
+    border-radius: 6px;              /* coins arrondis */
+    cursor: pointer;                 /* la souris devient une main */
+    transition: background-color 0.2s, transform 0.2s;  /* animation douce (0,2 s) quand la couleur ou la position change */
+}
+
+/* button:hover = un bouton survolé par la souris */
+button:hover {
+    background-color: var(--rouge);  /* devient rouge */
+    transform: translateY(-2px);     /* monte légèrement de 2 pixels */
+}
+
+/* #b1, #b2, #b3 = les trois boutons de l'accueil (id="b1", id="b2", id="b3") */
+#b1,
+#b2,
+#b3 {
+    display: block;                  /* chaque bouton sur sa propre ligne */
+    width: 260px;                    /* même largeur pour les trois */
+    margin: 0 auto;                  /* centrés */
+    padding: 16px;                   /* plus grands que les autres boutons */
+    font-size: 1.1em;                /* texte un peu plus grand */
+}
+
+/* #b1 = le bouton « Notre compétition », mis en avant en rouge */
+#b1 {
+    background-color: var(--rouge);  /* fond rouge */
+}
+
+/* #b1 au survol */
+#b1:hover {
+    background-color: var(--bleu);   /* devient bleu */
+}
+
+/* ----- Logo et images ----- */
+/* img = toutes les images */
+img {
+    display: block;                  /* sur sa propre ligne */
+    margin: 30px auto;               /* 30px au-dessus et en dessous, centrée */
+    max-width: 100%;                 /* ne dépasse jamais la largeur de l'écran */
+    height: auto;                    /* garde les proportions de l'image */
+}
+
+/* .photo = les grandes images (course.png, comp_aff.png) */
+.photo {
+    width: 100%;                     /* prend toute la largeur de la page */
+    max-width: 700px;                /* sans dépasser 700 pixels */
+    border-radius: 8px;              /* coins arrondis */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);  /* légère ombre */
+}
+
+/* ----- Page Notre sport (valeurs, philosophie, règles) ----- */
+/* .grand-texte = les titres des articles (bandeaux bleus) */
+.grand-texte {
+    margin: 35px 0 10px;             /* 35px au-dessus, 10px en dessous */
+    padding: 10px 15px;              /* espace intérieur */
+    font-size: 1.25em;               /* texte plus grand */
+    color: var(--blanc);             /* texte blanc */
+    background-color: var(--bleu);   /* fond bleu */
+    border-left: 6px solid var(--rouge);  /* liseré rouge à gauche */
+    border-radius: 4px;              /* coins légèrement arrondis */
+}
+
+/* Le <u> dans les titres d'articles : on retire le soulignement, le bandeau suffit */
+.grand-texte u {
+    text-decoration: none;           /* pas de soulignement */
+}
+
+/* body > div = les boîtes <div> placées directement dans la page (texte des articles) */
+body > div {
+    padding: 15px 20px;              /* espace intérieur */
+    background-color: var(--blanc);  /* fond blanc */
+    border-radius: 4px;              /* coins arrondis */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* légère ombre grise sous la boîte */
+}
+
+/* ----- Formulaire d'inscription ----- */
+/* form = le formulaire */
+form {
+    padding: 25px;                   /* espace intérieur */
+    background-color: var(--blanc);  /* fond blanc */
+    border-radius: 8px;              /* coins arrondis */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* légère ombre */
+}
+
+/* label = les textes devant les champs (Nom, Prénom...) */
+label {
+    display: block;                  /* sur sa propre ligne, au-dessus du champ */
+    margin-bottom: 5px;              /* petit espace avant le champ */
+    font-weight: bold;               /* en gras */
+    color: var(--bleu);              /* en bleu */
+}
+
+/* input et textarea = les champs à remplir */
+input,
+textarea {
+    width: 100%;                     /* toute la largeur du formulaire */
+    padding: 10px;                   /* espace intérieur */
+    font-family: inherit;            /* même police que la page */
+    font-size: 1em;                  /* taille normale */
+    border: 1px solid #c5cbe0;       /* fine bordure gris-bleu */
+    border-radius: 4px;              /* coins arrondis */
+}
+
+/* :focus = le champ dans lequel on est en train d'écrire */
+input:focus,
+textarea:focus {
+    outline: none;                   /* enlève le contour par défaut du navigateur */
+    border-color: var(--bleu-clair); /* bordure bleue */
+    box-shadow: 0 0 0 3px rgba(44, 74, 158, 0.2);  /* halo bleu clair autour du champ */
+}
+
+/* ----- Vidéo (page Notre compétition) ----- */
+/* .video = la boîte qui contient la vidéo YouTube */
+.video {
+    position: relative;              /* sert de repère pour placer la vidéo à l'intérieur */
+    width: 100%;                     /* toute la largeur */
+    padding: 0;                      /* pas d'espace intérieur */
+    aspect-ratio: 16 / 9;            /* garde le format d'une vidéo (16:9) */
+    background-color: #000000;       /* fond noir pendant le chargement */
+    border-radius: 8px;              /* coins arrondis */
+    overflow: hidden;                /* cache ce qui dépasse des coins arrondis */
+}
+
+/* La fenêtre YouTube remplit entièrement sa boîte */
+.video iframe {
+    position: absolute;              /* placée par rapport à la boîte .video */
+    top: 0;                          /* collée en haut */
+    left: 0;                         /* collée à gauche */
+    width: 100%;                     /* toute la largeur */
+    height: 100%;                    /* toute la hauteur */
+    border: none;                    /* pas de bordure */
+}
+
+/* ----- Page Contact ----- */
+/* #b-insta = le bouton Instagram, aux couleurs d'Instagram (dégradé) */
+#b-insta {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);  /* dégradé orange → rose → violet */
+}
+
+/* Bouton Instagram au survol */
+#b-insta:hover {
+    background: var(--bleu);         /* devient bleu */
+}
+
+/* ul = la liste des créateurs */
+ul {
+    padding: 15px 40px;              /* espace intérieur (40px à gauche pour les puces) */
+    background-color: var(--blanc);  /* fond blanc */
+    border-radius: 4px;              /* coins arrondis */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* légère ombre */
+}
+
+/* li = chaque nom de la liste */
+li {
+    font-weight: bold;               /* noms en gras */
+    color: var(--bleu);              /* en bleu */
+}
